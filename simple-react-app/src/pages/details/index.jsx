@@ -10,8 +10,8 @@ export default function Details() {
 
     dogDetailsData,
     setDogDetailsData,
-    favoritesList,
-    handleAddToFavorite,
+    favouritesList,
+    handleAddTofavourite,
   } = useContext(GlobalContext);
   useEffect(() => {
     async function getDogDetails() {
@@ -41,7 +41,7 @@ export default function Details() {
   const life_span = dogDetailsData?.breeds?.[0]?.life_span || "Not Available";
   const temperament = dogDetailsData?.breeds?.[0]?.temperament || "Not Available";
   const origin = dogDetailsData?.breeds?.[0]?.origin || "Not Available";
-  
+
   return (
     
     <div className="container mx-auto py-10 grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -49,39 +49,39 @@ export default function Details() {
         <div className="h-96 overflow-hidden rounded-xl group">
           <img
             src={dogDetailsData?.url}
-            className="w-full h-full object-cover block group-hover:scale-105 duration-300"
+            className="w-full h-full object-cover block group-hover:scale-100 duration-300"
           />
         </div>
       </div>
-      <div className="flex flex-col gap-3">
-      <h3 className="font-bold text-2xl truncate text-black">
+      <div className="flex flex-col gap-3 justify-center">
+      <h3 className="font-semibold text-xl truncate text-gray-600">
           Name : {name}
         </h3>
-        <h3 className="font-bold text-2xl truncate text-black">
+        <h3 className="font-semibold text-xl truncate text-gray-600">
           Bred For : {bred_for}
         </h3>
-        <h3 className="font-bold text-2xl truncate text-black">
+        <h3 className="font-semibold text-xl truncate text-gray-600">
           Bred Group : {breed_group}
         </h3>
-        <h3 className="font-bold text-2xl truncate text-black">
+        <h3 className="font-semibold text-xl truncate text-gray-600">
           Life Span : {life_span}
         </h3>
-        <h3 className="font-bold text-2xl truncate text-black">
+        <h3 className="font-semibold text-xl truncate text-gray-600">
           Temperament : {temperament}
         </h3>
-        <h3 className="font-bold text-2xl truncate text-black">
+        <h3 className="font-semibold text-xl truncate text-gray-600">
           Origin : {origin}
         </h3>
         <div>
           <button
-            onClick={() => handleAddToFavorite(dogDetailsData)}
-            className="p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-rose-800 text-white"
+            onClick={() => handleAddTofavourite(dogDetailsData)}
+            className="p-3 px-8 rounded-lg text-sm uppercase font-medium tracking-wider mt-3 inline-block shadow-md bg-yellow-500 text-white hover:bg-yellow-300"
           >
-            {favoritesList && favoritesList.length > 0 && favoritesList.findIndex(
+            {favouritesList && favouritesList.length > 0 && favouritesList.findIndex(
               (item) => item.id === dogDetailsData?.id
             ) !== -1
-              ? "Remove from favorites"
-              : "Add to favorites"}
+              ? "Remove from favourites"
+              : "Add to favourites"}
           </button>
         </div>  
       </div>

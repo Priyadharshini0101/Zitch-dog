@@ -8,7 +8,7 @@ export default function GlobalState({children}){
     const [loading ,setLoading] = useState(false);
     const [dogList, setDogList] = useState([]);
     const [dogDetailsData, setDogDetailsData] = useState(null);
-    const [favoritesList, setFavoritesList] = useState([]);
+    const [favouritesList, setfavouritesList] = useState([]);
 
     const navigate = useNavigate()
   
@@ -55,19 +55,19 @@ export default function GlobalState({children}){
         }
     }
 
-    function handleAddToFavorite(getCurrentItem){
-        let cpyFavoritesList = [...favoritesList];
-        const index = cpyFavoritesList.findIndex(item => item.id === getCurrentItem.id)
+    function handleAddTofavourite(getCurrentItem){
+        let cpyfavouritesList = [...favouritesList];
+        const index = cpyfavouritesList.findIndex(item => item.id === getCurrentItem.id)
         if(index === -1){
-            cpyFavoritesList.push(getCurrentItem)
+            cpyfavouritesList.push(getCurrentItem)
         }else{
-            cpyFavoritesList.splice(index)
+            cpyfavouritesList.splice(index,1)
         }
-        setFavoritesList(cpyFavoritesList)
+        setfavouritesList(cpyfavouritesList)
     }
     return( <GlobalContext.Provider
     value={{
-        searchParam,setSearchParam,handleSubmit,loading,dogDetailsData,setDogDetailsData,dogList,setFavoritesList,favoritesList, handleAddToFavorite
+        searchParam,setSearchParam,handleSubmit,loading,dogDetailsData,setDogDetailsData,dogList,setfavouritesList,favouritesList, handleAddTofavourite
     }}>
         {children}
     </GlobalContext.Provider>);

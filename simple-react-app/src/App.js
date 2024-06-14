@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import Favorites from './pages/favorites';
+import Favourites from './pages/favourites';
 import Home from './pages/home';
 import Details from './pages/details'
 import Navbar from "./components/navbar"
@@ -8,11 +7,11 @@ import { Routes, Route} from "react-router-dom";
 function App() {
   return (
     <div>
-     <div className="min-h-screen p-6 bg-white text-gray-600 text-lg">
+     <div className="min-h-screen px-5 bg-white text-yellow-500 text-lg">
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/favorites" element={<Favorites/>}/>
+        <Route path="/favourites" element={<Favourites/>}/>
         <Route path="/dog-details/:reference_image_id" element={<Details/>}/>
       </Routes>
      </div>
