@@ -49,7 +49,7 @@ export default function Details() {
         <div className="h-96 overflow-hidden rounded-xl group">
           <img
             src={dogDetailsData?.url}
-            className="w-full h-full object-cover block group-hover:scale-100 duration-300"
+            className="w-full h-full object-cover block group-hover:scale-150 duration-300"
           />
         </div>
       </div>
