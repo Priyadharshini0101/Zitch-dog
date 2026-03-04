@@ -18,7 +18,7 @@ export default function Details() {
         setDogDetailsData([]);
     try{
       const response = await fetch(
-        `https://api.thedogapi.com/v1/images/${reference_image_id}`
+        `https://api.thedogapi.com/v1/images/${reference_image_id}?api_key=live_F500iTAt76ZNEW5pIq0xt79M4KGBjEm0Zoqk8WCrLIGLC4iJ1MurOr5QCXY2QK2P`
       );
       const data = await response.json();
 
