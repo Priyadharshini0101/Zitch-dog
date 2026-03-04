@@ -15,7 +15,7 @@ export default function GlobalState({children}){
     async function getImage(item){
         try{
             const res1 = await fetch(
-                `https://api.thedogapi.com/v1/images/${item.reference_image_id}`
+                `https://api.thedogapi.com/v1/images/${item.reference_image_id}?api_key=live_F500iTAt76ZNEW5pIq0xt79M4KGBjEm0Zoqk8WCrLIGLC4iJ1MurOr5QCXY2QK2P`
             );
             const data1 = await res1.json();
             if(data1){
