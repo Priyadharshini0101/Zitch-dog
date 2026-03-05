@@ -34,7 +34,7 @@ export default function GlobalState({children}){
             setLoading(true)
             setDogList([])
             const res = await fetch(
-                `https://api.thedogapi.com/v1/breeds`
+                `https://api.thedogapi.com/v1/breeds?api_key=live_F500iTAt76ZNEW5pIq0xt79M4KGBjEm0Zoqk8WCrLIGLC4iJ1MurOr5QCXY2QK2P`
             );
             const data = await res.json();
           
